@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cost Calculator - Carpool</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: linear-gradient(135deg, #23375d, #ca62f73d);
+            color: #fff;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+        }
+        .calculator-container {
+            width: 300px;
+            margin: auto;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+            text-align: center;
+        }
+        input, select, button {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 0.5rem;
+            border-radius: 5px;
+            border: none;
+        }
+        button {
+            background: #00c9ff;
+            color: #fff;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        button:hover {
+            background: #0077b6;
+        }
+        #result {
+            margin-top: 1rem;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="signup.html">Sign Up</a>
+        <a href="login.html">Login</a>
+        <a href="profile.html">Profile</a>
+        <a href="searchride.html">Search Ride</a>
+        <a href="offerride.html">Offer Ride</a>
+        <a href="costcal.html">Cost Splitter</a>
+        <a href="review.html">Reviews</a>
+
+    </nav>
+
+    <div class="calculator-container">
+        <h2>Carpool Cost Calculator</h2>
+        <input type="number" placeholder="Distance (km)" id="distance">
+        <input type="number" placeholder="No. of Passengers" id="passengers">
+        <select id="fuel">
+            <option value="petrol">Petrol</option>
+            <option value="diesel">Diesel</option>
+            <option value="electric">Electric</option>
+        </select>
+        <input type="number" placeholder="Toll Price (₹)" id="toll">
+        <button onclick="calculateCost()">Calculate</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateCost() {
+            const distance = parseFloat(document.getElementById('distance').value);
+            const passengers = parseInt(document.getElementById('passengers').value);
+            const fuel = document.getElementById('fuel').value;
+            const toll = parseFloat(document.getElementById('toll').value);
+
+            let costPerKm;
+            if (fuel === 'petrol') costPerKm = 10;
+            else if (fuel === 'diesel') costPerKm = 8;
+            else costPerKm = 5;
+
+            const totalCost = (distance * costPerKm) + toll;
+            const perPersonCost = (totalCost / passengers).toFixed(2);
+
+            document.getElementById('result').innerHTML = `Total Cost: ₹${totalCost.toFixed(2)}<br>Cost per Person: ₹${perPersonCost}`;
+        }
+    </script>
+</body>
+</html>

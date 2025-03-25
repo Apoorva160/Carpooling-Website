@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carpool - Login</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: linear-gradient(135deg, #23375d, #ca62f73d);
+            color: #fff;
+            transition: background 0.5s ease;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: 0.3s ease;
+        }
+        nav a:hover {
+            color: #00c9ff;
+        }
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-card {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            width: 300px;
+            height: 420px;
+        }
+        .login-card input {
+            width: 100%;
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            border: none;
+            border-radius: 5px;
+        }
+        .login-card button {
+            width: 100%;
+            padding: 0.7rem;
+            border: none;
+            border-radius: 5px;
+            background: #00c9ff;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .login-card button:hover {
+            background: #0077b6;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="signup.html">Sign Up</a>
+        <a href="login.html">Login</a>
+        <a href="profile.html">Profile</a>
+        <a href="searchride.html">Search Ride</a>
+        <a href="offer.html">Offer Ride</a>
+        <a href="costcal.html">Cost Splitter</a>
+        <a href="review.html">Reviews</a>
+    </nav>
+
+    <div class="login-container">
+        <div class="login-card">
+            <h2>Login</h2>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="login()">Login</button>
+        </div>
+    </div>
+
+    <script>
+        function login() {
+            const defaultUsername = "user";
+            const defaultPassword = "password";
+            const enteredUsername = document.getElementById('username').value;
+            const enteredPassword = document.getElementById('password').value;
+
+            if (enteredUsername === defaultUsername && enteredPassword === defaultPassword) {
+                alert('Login successful! Redirecting to profile...');
+                window.location.href = 'profile.html';
+            } else {
+                alert('Invalid username or password');
+            }
+        }
+    </script>
+</body>
+</html>

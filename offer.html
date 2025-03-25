@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offer a Ride - Carpool</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: linear-gradient(135deg, #23375d, #ca62f73d);
+            color: #fff;
+            transition: background 0.5s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #00c9ff;
+        }
+
+        .offer-container {
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        input, button {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        input {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
+
+        button {
+            background: #00c9ff;
+            color: #fff;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        button:hover {
+            background: #0077b6;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="signup.html">Sign Up</a>
+        <a href="login.html">Login</a>
+        <a href="profile.html">Profile</a>
+        <a href="searchride.html">Search Ride</a>
+        <a href="offer.html">Offer Ride</a>
+        <a href="costcal.html">Cost Splitter</a>
+        <a href="review.html">Reviews</a>
+    </nav>
+
+    <div class="offer-container">
+        <h2>Offer a Ride</h2>
+        <input type="text" id="start-location" placeholder="Start Location">
+        <input type="text" id="destination" placeholder="Destination">
+        <input type="date" id="ride-date">
+        <input type="time" id="ride-time">
+        <input type="number" id="seats" placeholder="Seats Available" min="1">
+        <button onclick="offerRide()">Offer Ride</button>
+    </div>
+
+    <script>
+        function offerRide() {
+            const start = document.getElementById('start-location').value;
+            const destination = document.getElementById('destination').value;
+            const date = document.getElementById('ride-date').value;
+            const time = document.getElementById('ride-time').value;
+            const seats = document.getElementById('seats').value;
+
+            if (start && destination && date && time && seats) {
+                alert(`Your ride from ${start} to ${destination} is offered!\nDate: ${date} at ${time}\nSeats Available: ${seats}`);
+            } else {
+                alert('Please fill in all fields!');
+            }
+        }
+    </script>
+</body>
+</html>

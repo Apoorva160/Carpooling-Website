@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Carpool</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: linear-gradient(135deg, #23375d, #ca62f73d);
+            color: #fff;
+            transition: background 0.5s ease;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: 0.3s ease;
+        }
+        nav a:hover {
+            color: #00c9ff;
+        }
+        .profile-container {
+            width: 300px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+            text-align: center;
+        }
+        .profile-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #00c9ff;
+            margin-bottom: 1rem;
+        }
+        .profile-info {
+            line-height: 1.6;
+        }
+        .btn {
+            background: #00c9ff;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            margin: 0.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .btn:hover {
+            background: #0077b6;
+        }
+        input {
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            padding: 0.3rem;
+            border-radius: 5px;
+            margin-top: 0.3rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="signup.html">Sign Up</a>
+        <a href="login.html">Login</a>
+        <a href="profile.html">Profile</a>
+        <a href="searchride.html">Search Ride</a>
+        <a href="offer.html">Offer Ride</a>
+        <a href="costcal.html">Cost Splitter</a>
+        <a href="review.html">Reviews</a>
+    </nav>
+
+    <div class="profile-container">
+        <h2>Welcome, Apoorva!</h2>
+        <img src="WhatsApp Image 2025-03-23 at 12.11.02_fd6cbb9a.jpg" alt="Profile Photo" class="profile-photo">
+        <div class="profile-info">
+            <p><strong>Car:</strong> Honda Civic</p>
+            <p><strong>Preferred Route:</strong> Downtown ➜ Tech Park</p>
+            <p><strong>Rides Offered:</strong> 12</p>
+            <p><strong>Rides Taken:</strong> 8</p>
+            <p><strong>Rating:</strong> ⭐⭐⭐⭐ (4.5/5)</p>
+        </div>
+        <button class="btn" onclick="enableEdit()">Edit</button>
+        <button class="btn" onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        function enableEdit() {
+            const infoFields = document.querySelectorAll('.profile-info p');
+            infoFields.forEach(field => {
+                const value = field.innerText.split(': ')[1];
+                field.innerHTML = `${field.innerHTML.split(':')[0]}: <input type='text' value='${value}'>`;
+            });
+            document.querySelector('.btn').innerText = 'Save';
+            document.querySelector('.btn').setAttribute('onclick', 'saveProfile()');
+        }
+
+        function saveProfile() {
+            const inputs = document.querySelectorAll('.profile-info input');
+            const infoFields = document.querySelectorAll('.profile-info p');
+            inputs.forEach((input, index) => {
+                infoFields[index].innerHTML = `${infoFields[index].innerHTML.split(':')[0]}: ${input.value}`;
+            });
+            document.querySelector('.btn').innerText = 'Edit';
+            document.querySelector('.btn').setAttribute('onclick', 'enableEdit()');
+            alert('Profile updated successfully!');
+        }
+
+        function logout() {
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>

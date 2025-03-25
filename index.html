@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carpool - Home</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: linear-gradient(135deg, #23375d, #ca62f73d);
+            color: #fff;
+            transition: background 0.5s ease;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #00c9ff;
+        }
+        .hero {
+            text-align: center;
+            padding: 4rem 1rem;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            margin: 2rem auto;
+            width: 80%;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+        }
+        .features {
+            display: flex;
+            justify-content: space-around;
+            gap: 1rem;
+            margin: 2rem auto;
+            width: 80%;
+        }
+        .feature-card {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 1rem;
+            border-radius: 10px;
+            width: 30%;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            background: rgba(0, 0, 0, 0.8);
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="signup.html">Sign Up</a>
+        <a href="login.html">Login</a>
+        <a href="profile.html">Profile</a>
+        <a href="searchride.html">Search Ride</a>
+        <a href="offer.html">Offer Ride</a>
+        <a href="review.html">Reviews</a>
+        <a href="costcalc.html">Cost Splitter</a>
+    </nav>
+
+    <div class="hero">
+        <h1>WELCOME TO RIDESYNC !</h1>
+        <p>Share rides, split costs, and make commuting easier and greener.</p>
+    </div>
+
+    <div class="features">
+        <div class="feature-card">
+            <h3>Save Money</h3>
+            <p>Share fuel costs with your carpool buddies!</p>
+        </div>
+        <div class="feature-card">
+            <h3>Eco-Friendly</h3>
+            <p>Reduce carbon emissions and traffic jams.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Make Friends</h3>
+            <p>Connect with people going the same way.</p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Carpool | Drive smart, ride together!
+    </footer>
+</body>
+</html>

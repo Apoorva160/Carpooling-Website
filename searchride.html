@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Ride - Carpool</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: linear-gradient(135deg, #23375d, #ca62f73d);
+            color: #fff;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+        }
+        .search-container {
+            width: 300px;
+            margin: auto;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+            text-align: center;
+        }
+        input, button {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 0.5rem;
+            border-radius: 5px;
+            border: none;
+        }
+        button {
+            background: #00c9ff;
+            color: #fff;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        button:hover {
+            background: #0077b6;
+        }
+        .ride-result {
+            margin-top: 1rem;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="signup.html">Sign Up</a>
+        <a href="login.html">Login</a>
+        <a href="profile.html">Profile</a>
+        <a href="searchride.html">Search Ride</a>
+        <a href="offer.html">Offer Ride</a>
+        <a href="costcal.html">Cost Splitter</a>
+        <a href="review.html">Reviews</a>
+    </nav>
+
+    <div class="search-container">
+        <h2>Search for a Ride</h2>
+        <input type="text" placeholder="Start Location" id="start">
+        <input type="text" placeholder="Destination" id="destination">
+        <input type="date" id="date">
+        <input type="number" placeholder="No. of Passengers" id="passengers">
+        <button onclick="searchRide()">Search</button>
+    </div>
+
+    <div id="results"></div>
+
+    <script>
+        function searchRide() {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = `
+                <div class="ride-result">
+                    <h3>Driver: Sagar Singh</h3>
+                    <p>Car: Toyota Corolla</p>
+                    <p>Time: 9:00 AM</p>
+                    <p>Seats Available: 3</p>
+                </div>
+                <div class="ride-result">
+                    <h3>Driver: Keshav Dixit</h3>
+                    <p>Car: Honda City</p>
+                    <p>Time: 8:40 AM</p>
+                    <p>Seats Available: 2</p>
+                </div>
+                <div class="ride-result">
+                    <h3>Driver: Mike Johnson</h3>
+                    <p>Car: Ford Focus</p>
+                    <p>Time: 11:00 AM</p>
+                    <p>Seats Available: 4</p>
+                </div>`;
+        }
+    </script>
+</body>
+</html>

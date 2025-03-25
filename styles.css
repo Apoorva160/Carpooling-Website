@@ -1,0 +1,386 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #f4f4f4;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+/* Navbar */
+nav {
+    background: #1e2a38;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    animation: slideDown 0.8s ease-in-out;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    color: #00bfa6;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #00bfa6;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(120deg, #1e2a38, #00bfa6);
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+    animation: fadeIn 1s ease-in;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    animation: slideUp 1s ease-out;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #1e2a38;
+    background: #fff;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: scale(1.1);
+    background: #00bfa6;
+    color: #fff;
+}
+
+/* Search Section */
+section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+form input {
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background: #00bfa6;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background: #1e2a38;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    background: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.feature-card {
+    background: #f4f4f4;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Ratings Section */
+.ratings .review {
+    background: #fff;
+    padding: 20px;
+    margin: 10px auto;
+    width: 60%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.review:hover {
+    transform: scale(1.05);
+}
+
+/* Reviews Page Styling */
+.reviews-page {
+    background: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+}
+
+.reviews-page h2 {
+    color: #1e2a38;
+    margin-bottom: 20px;
+}
+
+.review-card {
+    background: #fff;
+    padding: 15px;
+    margin: 10px auto;
+    width: 70%;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+}
+
+.review-card:hover {
+    transform: scale(1.02);
+}
+
+.review-card p {
+    color: #333;
+    font-size: 1rem;
+}
+/* Star rating styles */
+.star-rating {
+    display: flex;
+    gap: 5px;
+    cursor: pointer;
+    margin: 10px 0;
+    font-size: 24px;
+}
+
+.star {
+    color: #ddd;
+    transition: color 0.3s;
+}
+
+.star:hover,
+.star.selected {
+    color: #FFD700; /* Gold color for selected stars */
+}
+
+/* Display stars in reviews */
+.star-rating-display {
+    color: #FFD700;
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+
+/* Sign-Up Page Styling */
+.signup-container {
+    background: #f4f4f4;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.signup-form {
+    background: #fff;
+    padding: 20px;
+    margin: 0 auto;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.signup-form input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.signup-form button {
+    width: 100%;
+    padding: 10px;
+    background: #00bfa6;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.signup-form button:hover {
+    background: #1e2a38;
+}
+/* Profile Page Styling */
+.profile-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.profile-container:hover {
+    transform: translateY(-5px);
+}
+
+.profile-header h2 {
+    color: #1e2a38;
+    margin-bottom: 10px;
+}
+
+.profile-pic img {
+    width: 150px;
+    height: 150px;
+    border-radius: 80%;
+    object-fit: cover;
+    border: 3px solid #00bfa6;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+    /* Add these fixes */
+    max-width: 100%; 
+    display: block;
+    margin: 0 auto;
+}
+.profile-info p {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 5px;
+}
+
+.edit-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #00bfa6;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    margin-top: 15px;
+}
+
+.edit-btn:hover {
+    background: #1e2a38;
+}
+.cost-calculator {
+    padding: 20px;
+    background: #f4f4f4;
+    border-radius: 10px;
+    width: 300px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.cost-calculator input,
+.cost-calculator select,
+.cost-calculator button {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.cost-calculator button {
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.cost-calculator button:hover {
+    background-color: #45a049;
+}
+
+#cost-output {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #333;
+}
+/* Button style */
+#darkModeToggle {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #ddd;
+    color: #000;
+}
+
+/* Dark mode style on body */
+body.dark-mode {
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+/* Button style changes in dark mode */
+body.dark-mode #darkModeToggle {
+    background-color: #444;
+    color: #fff;
+}
+
+
+
+/* Footer */
+footer {
+    background: #1e2a38;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
